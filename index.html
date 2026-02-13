@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Quest: Legend of Quantum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HEADER -->
+        <div class="game-header">
+            <h1>🐉 DRAGON QUEST: LEGEND OF QUANTUM 🐉</h1>
+            <div class="stats-bar">
+                <div class="player-stats">
+                    <span id="playerName">Hero</span> | 
+                    LVL: <span id="playerLevel">1</span> | 
+                    HP: <span id="playerHp">50</span>/<span id="playerMaxHp">50</span> | 
+                    MP: <span id="playerMp">20</span>/<span id="playerMaxMp">20</span> | 
+                    GOLD: <span id="playerGold">100</span>
+                </div>
+                <div class="location" id="locationText">🏠 Starting Village</div>
+            </div>
+        </div>
+
+        <!-- MAIN GAME AREA -->
+        <div class="game-main">
+            <!-- LEFT PANEL - COMBAT LOG & MESSAGES -->
+            <div class="combat-log" id="combatLog">
+                <div class="log-entry">Welcome to Dragon Quest!</div>
+                <div class="log-entry">Your adventure begins now...</div>
+            </div>
+
+            <!-- CENTER - CHARACTER / ENEMY DISPLAY -->
+            <div class="game-screen" id="gameScreen">
+                <div class="character-display">
+                    <div class="player-character" id="playerChar">
+                        <div class="sprite">⚔️</div>
+                        <div class="name">HERO</div>
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="playerHpBar" style="width:100%"></div>
+                        </div>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="enemy-character" id="enemyChar">
+                        <div class="sprite" id="enemySprite">👾</div>
+                        <div class="name" id="enemyName">Slime</div>
+                        <div class="hp-bar">
+                            <div class="hp-fill" id="enemyHpBar" style="width:100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL - INVENTORY & QUESTS -->
+            <div class="inventory-panel">
+                <h3>🎒 INVENTORY</h3>
+                <ul id="inventoryList">
+                    <li>Potion x3</li>
+                    <li>Ether x1</li>
+                    <li>Iron Sword</li>
+                </ul>
+                <h3>⚔️ EQUIPMENT</h3>
+                <div class="equipment">
+                    <div>Weapon: <span id="weapon">Iron Sword</span></div>
+                    <div>Armor: <span id="armor">Leather Armor</span></div>
+                </div>
+                <h3>📜 ACTIVE QUEST</h3>
+                <div id="questText">Defeat the Goblin King</div>
+            </div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="action-bar">
+            <button class="action-btn" id="btnAttack">⚔️ ATTACK</button>
+            <button class="action-btn" id="btnMagic">🔮 MAGIC</button>
+            <button class="action-btn" id="btnItem">🧪 ITEM</button>
+            <button class="action-btn" id="btnFlee">🏃 FLEE</button>
+            <button class="action-btn" id="btnRest">🛌 REST</button>
+            <button class="action-btn" id="btnShop">🏪 SHOP</button>
+        </div>
+
+        <!-- MAGIC MENU (POPUP) -->
+        <div class="magic-menu" id="magicMenu" style="display:none;">
+            <div class="magic-header">CHOOSE SPELL</div>
+            <div class="magic-grid">
+                <div class="spell-card" data-spell="fire">🔥 Fire (5 MP)</div>
+                <div class="spell-card" data-spell="ice">❄️ Ice (5 MP)</div>
+                <div class="spell-card" data-spell="heal">💚 Heal (8 MP)</div>
+                <div class="spell-card" data-spell="thunder">⚡ Thunder (10 MP)</div>
+            </div>
+            <button class="close-magic" id="closeMagic">CLOSE</button>
+        </div>
+
+        <!-- SHOP MENU -->
+        <div class="shop-menu" id="shopMenu" style="display:none;">
+            <div class="shop-header">🛒 VILLAGE SHOP</div>
+            <div class="shop-items">
+                <div class="shop-item" data-item="potion">Potion (50G) - Heal 30 HP</div>
+                <div class="shop-item" data-item="ether">Ether (80G) - Restore 20 MP</div>
+                <div class="shop-item" data-item="sword">Steel Sword (200G) - ATK+10</div>
+                <div class="shop-item" data-item="armor">Chain Mail (300G) - DEF+8</div>
+            </div>
+            <div class="shop-player-gold">Your Gold: <span id="shopGold">100</span></div>
+            <button class="close-shop" id="closeShop">CLOSE</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
